@@ -25,6 +25,28 @@ stages {
 		}
 		
 	}
+	//dodatak brisanje foldera sa agenta2 u okviru ovog taska
+	post {
+		always {
+		script {
+			cleanWs()
+		}
+		script {
+			dir("${env.WORKSPACE}@tmp"){ 
+			deleteDir()
+			}
+			dir("${env.WORKSPACE}@script"){ 
+			deleteDir()
+			}
+			dir("${env.WORKSPACE}@lib"){ 
+			deleteDir()
+			}
+			
+		}
+			
+		}
+		
+	}
 	}
 }
 post {
