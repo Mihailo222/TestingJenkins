@@ -1,7 +1,7 @@
 pipeline {
 
 	agent { 
-		label 'sshAgent'
+		label 'NodeFromRemote'
 	   //	customWorkspace '/home/jenkins2/workspace/MyNewJobMika'
 		}
 	stages {
