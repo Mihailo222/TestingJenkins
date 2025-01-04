@@ -45,6 +45,11 @@ post {
 		script {
 			cleanWs()
 		}
+		script {
+			dir("${env.WORKSPACE}@tmp"){ 
+			deleteDir()
+			}
+		}
 	}
 	
 }
