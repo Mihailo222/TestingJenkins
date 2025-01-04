@@ -17,6 +17,15 @@ stages {
 		
 	
 	}
+	stage("Testing other agent"){
+	agent { label 'sshAgent'}
+	steps {
+		script {
+			sh('whoami')
+		}
+		
+	}
+	}
 }
 post {
 	always {
