@@ -2,10 +2,13 @@ pipeline {
 
 	agent { 
 		label 'sshAgent'
-	   	customWorkspace '/home/jenkins2/workspace/MyNewJobMika'
+	   //	customWorkspace '/home/jenkins2/workspace/MyNewJobMika'
 		}
 	stages {
 
+	stage('Checkout phase'){
+		checkout scm
+	}
 	stage('Print Workspace'){
 		steps {
 			script {
