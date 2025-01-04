@@ -71,7 +71,9 @@ post {
 }
 }*/
 
-pipeline {
+///***************************************************
+
+/*pipeline {
 
         agent {
 
@@ -91,9 +93,27 @@ pipeline {
                         }
                 }
         }
-}
+}*/
+
+pipeline {
+        agent {
+		label 'NodeFromRemote'
+		
+	}
+        stages {
+                stage("Execute playbook"){
+
+                steps {
+
+                     ansiblePlaybook credentialsId: 'jenkinsansible','disableHostKeyChecking':true, installation:'Ansible',inventory:'/etc/ansible/hosts',playbook:'/etc/ansible/deployApp.yml'
+
+
+                }
 
 
 
+                }
 
 
+
+        }
