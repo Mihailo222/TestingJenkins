@@ -8,6 +8,7 @@ pipeline {
 			script {
 			echo "Stage: ${STAGE_NAME}"
 			echo "The current workspace is: ${env.WORKSPACE}"
+				sh('ls -la')
 			}
 		}
 		
