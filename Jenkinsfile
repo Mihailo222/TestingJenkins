@@ -4,7 +4,8 @@ pipeline {
 		label 'NodeFromRemote'
 	   //	customWorkspace '/home/jenkins2/workspace/MyNewJobMika'
 		}
-	stages {
+	
+stages {
 	stage('Print Workspace'){
 		steps {
 			script {
@@ -18,11 +19,11 @@ pipeline {
 	}
 
 	stage("delete a workspace's files only"){
-		script {
 		echo "Stage ${STAGE_NAME}"
+
+		script {
 		cleanWs()
-		}
-		
+		}	
 	}
-	}
+}
 }
