@@ -1,4 +1,4 @@
-pipeline {
+/*pipeline {
 
 	agent { 
 		label 'NodeFromRemote'
@@ -69,4 +69,30 @@ post {
 	}
 	
 }
+}*/
+
+pipeline {
+
+        agent {
+
+                label 'NodeFromRemote'
+
+        }
+
+        stages {
+                stage('Test ansible versions'){
+                        steps {
+                                sh '''
+
+                                ansible --version
+                                ansible-playbook --version
+                                ansible-galaxy --version
+                        }
+                }
+        }
 }
+
+
+
+
+
