@@ -28,5 +28,16 @@ stages {
 		}
 		}
 	}
+
+	stage("Deleting additional @tmp, @script and @lib files"){
+	   steps {
+		dir("${env.WORKSPACE}@tmp"){
+			deleteDir()
+		}
+		script {
+		 sh "ls -la ${env.WORKSPACE}@tmp"
+		}
+	   }
+	}
 }
 }
