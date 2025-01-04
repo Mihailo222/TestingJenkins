@@ -6,9 +6,9 @@ pipeline {
 		}
 	stages {
 
-//	stage('Checkout phase'){
-//		checkout scm
-//	}
+	stage('Checkout phase'){
+		checkout scm
+	}
 	stage('Print Workspace'){
 		steps {
 			script {
