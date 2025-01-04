@@ -5,10 +5,6 @@ pipeline {
 	   //	customWorkspace '/home/jenkins2/workspace/MyNewJobMika'
 		}
 	stages {
-
-	//stage('Checkout phase'){
-	//	checkout scm
-	//}
 	stage('Print Workspace'){
 		steps {
 			script {
@@ -19,6 +15,14 @@ pipeline {
 		}
 		
 	
+	}
+
+	stage("delete a workspace's files only"){
+		script {
+		echo "Stage ${STAGE_NAME}"
+		cleanWs()
+		}
+		
 	}
 	}
 }
