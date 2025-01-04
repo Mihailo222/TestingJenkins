@@ -18,7 +18,7 @@ stages {
 	
 	}
 
-	stage("delete a workspace's files and a directory!!!"){
+/*	stage("delete a workspace's files and a directory!!!"){
 	
 		steps { //ovo mora u steps blok
 		echo "Stage ${STAGE_NAME}"
@@ -39,8 +39,8 @@ stages {
 		}
 	   }
 	}
-}
-/*post {
+}*/
+post {
 	always {
 		script {
 			cleanWs()
@@ -52,5 +52,5 @@ stages {
 		}
 	}
 	
-}*/
+}
 }
