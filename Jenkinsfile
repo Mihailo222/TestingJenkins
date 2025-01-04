@@ -19,11 +19,14 @@ stages {
 	}
 
 	stage("delete a workspace's files only"){
+	
+		steps { //ovo mora u steps blok
 		echo "Stage ${STAGE_NAME}"
 
 		script {
 		cleanWs()
-		}	
+		}
+		}
 	}
 }
 }
